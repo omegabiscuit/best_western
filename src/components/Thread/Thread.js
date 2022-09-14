@@ -1,8 +1,6 @@
-import { useParams } from "react-router";
 import { Button,TextField } from "@mui/material";
 
 function Thread(props) {
-    let { threadSlug } = useParams();
     const thread = props.thread
     return (
         <body>
