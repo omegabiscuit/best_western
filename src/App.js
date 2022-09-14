@@ -1,12 +1,11 @@
-import logo from './logo.svg';
-//import './App.css';
 import { Link } from '@mui/material';
+import Header from './components/Header';
 
 function App(props) {
   const threads = props.threads
   const listItems = threads.map((thread) =>
       <li class="row">
-        <Link href={thread.id}>
+        <Link href={thread.id} underline="hover">
           <h4 class="title">
             {thread.title}
           </h4>
@@ -23,9 +22,14 @@ function App(props) {
   );
   return (
       <div className="App">
-          <p>
-            <ol>{listItems}</ol>
-          </p>
+          <div class="top-bar">
+            <Header/>
+          </div>
+          <div style={{marginTop: 80}}>
+            <p>
+              <ol>{listItems}</ol>
+            </p>
+          </div>
       </div>
   );
 }
